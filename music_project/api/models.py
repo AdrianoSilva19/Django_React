@@ -4,6 +4,11 @@ import random
 
 
 def generate_unique_code():
+    """Function that generates a unique code for a room
+
+    Returns:
+        _type_: Code for the room
+    """
     length = 6
     
     while True:
@@ -17,6 +22,8 @@ def generate_unique_code():
 # Basically a model is a table from a generic database, in this case it would be about rooms, hosts, etc
 
 class Room(models.Model):
+    """Class that builds the room table with the diferent atributes
+    """
     # what would we need to have a room
     code = models.CharField(max_length=8,default="",unique=True) # code unique for each room with max length 8 
     host = models.CharField(max_length=50,unique=True) # each room can have only one host
